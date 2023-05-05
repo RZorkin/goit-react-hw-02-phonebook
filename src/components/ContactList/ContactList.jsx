@@ -6,21 +6,19 @@ export function ContactList({ contacts, deleteContact }) {
     <ul className={css.list}>
       {contacts.map(({ id, name, number }) => {
         return (
-          <>
-            <li className={css.item}>
-              <p>
-                {name}:{number}
-              </p>
-              <button
-                className={css.button}
-                type="button"
-                onClick={() => deleteContact(id)}
-                value="delete"
-              >
-                Delete contact
-              </button>
-            </li>
-          </>
+          <li key={id} className={css.item}>
+            <p>
+              {name}:{number}
+            </p>
+            <button
+              className={css.button}
+              type="button"
+              onClick={() => deleteContact(id)}
+              value="delete"
+            >
+              Delete contact
+            </button>
+          </li>
         );
       })}
     </ul>
